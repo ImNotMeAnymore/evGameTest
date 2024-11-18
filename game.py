@@ -11,8 +11,7 @@ from math import sin, cos, tan
 import functools
 
 
-
-ROOT = "/home/yo/Projects/PYTHON/Githubed/EvProject-main/"
+ROOT = os.path.realpath(__file__).rsplit("/",1)[0]+"/"
 
 class Vector(Vector2):
 	@property
