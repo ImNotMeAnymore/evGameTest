@@ -1,0 +1,56 @@
+# pygame-ce build process: config.py setup.py
+/Setup
+*.pyc
+/build/
+/.mesonpy-*
+
+# Windows prebuilt external libraries
+/prebuilt-x??
+/prebuilt_downloads
+
+# macOS generated files
+.DS_Store
+
+# Sphinx generated files: make_docs.py
+/docs/generated
+
+# Emacs temporary files
+*~
+
+# VIM temporary files
+*.swp
+
+# Visual Studio cache/config directory
+.vs/
+
+# Visual Studio Code cache/config directory
+.vscode/
+
+# PyCharm cache/config directory
+.idea/
+
+# mypy
+.mypy_cache/
+
+# Other
+envdev*
+.virtualenv*
+*venv*
+buildconfig/manylinux-build/wheelhouse/
+anenv
+dist
+.vagrant
+*.egg-info/
+*.so
+__pycache__/
+_headers/*
+buildconfig/win_dll_dirs.json
+tempCodeRunnerFile.py
+
+#This is where I store trash commented out code and old images
+OLD/
+
+# cython generated files
+src_c/_sdl2/*.c
+!/src_c/_sdl2/touch.c
+src_c/pypm.c

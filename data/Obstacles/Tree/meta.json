@@ -1,0 +1,17 @@
+{
+	"w":10,
+	"h":19,
+	"hitbox":[
+		[4,17,2,1]
+	],
+	"scale":{
+		"scale":16,
+		"hitSize":[16,16,16,1]
+	},
+	"textures-choice":[
+		["textures/b.png","textures/1f.png"],
+		["textures/b.png","textures/2f.png"],
+		["textures/b.png","textures/3f.png"]
+	]
+}
+
