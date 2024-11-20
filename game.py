@@ -11,7 +11,7 @@ from math import sin, cos, tan
 import functools
 
 
-ROOT = os.path.realpath(__file__).rsplit("/",1)[0]+"/"
+ROOT = os.path.realpath(__file__).rsplit("/",1)[0]+"/" #TODO make it OS-agnostic
 
 class Vector(Vector2):
 	@property
@@ -164,7 +164,7 @@ class Obstacle(Thing):
 
 class SavedObstacle(Obstacle):
 	def __init__(self, name:str, x:int,y:int,w:int=None,h:int=None):
-		self.path = p = ROOT+f"data/Obstacles/{name}/"
+		self.path = p = ROOT+f"data/Obstacles/{name}/" #TODO make it OS-agnostic
 		self.JS = JS = cachedJson(p+"meta.json")
 		TO = {
 			"hitbox":JS.get("hitbox",[]),
@@ -184,16 +184,13 @@ class SavedObstacle(Obstacle):
 #Tree = Obstacle(14,10,10,19,[Rect(4,17,2,1)]).scaleBy(16,(16,16,16,1))
 #Tree = SavedObstacle("Tree", 17,10, )
 
-
-
-
 class Player(Thing):
 	rect = Rect(0,0,32,64)
 	def __init__(self):
 		self.rect.center = en.MIDDLE
 		self.movect = Vector(0)
 		self._age = 0
-		self.texture = loadTexture(ROOT+"data/Player/texture.png")
+		self.texture = loadTexture(ROOT+"data/Player/texture.png") #TODO make it OS-agnostic
 	def onTick(self):
 		self._age += 1
 	def draw(self):
@@ -208,10 +205,7 @@ class Player(Thing):
 		if self.rect.left < en.VISIBLE.left: r += "l"
 		if self.rect.right > en.VISIBLE.right: r += "r"
 		return r
-
-
 WORLDS = {}
-
 
 class WorldTile:
 	def __init__(self, *k, **kw):
@@ -316,7 +310,7 @@ class AnimatedTexture:
 
 class SavedTile(WorldTile):
 	def onInit(self, name):
-		p = ROOT+f"data/Worlds/{name}/"
+		p = ROOT+f"data/Worlds/{name}/" #TODO make it OS-agnostic
 		k = cachedJson(p+"meta.json")
 
 		def _xtemp(dat:str|list|None):
@@ -353,7 +347,7 @@ def loadWorlds(name:str):
 	
 
 
-for i in os.listdir(ROOT+"data/Worlds"): loadWorlds(i)
+for i in os.listdir(ROOT+"data/Worlds"): loadWorlds(i) #TODO make it OS-agnostic
 #loadWorlds("Debug")
 
 
